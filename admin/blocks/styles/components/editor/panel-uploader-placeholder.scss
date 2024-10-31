@@ -1,0 +1,212 @@
+/**
+ * Background uploader placeholder component
+ *
+ * @since    1.0.0
+ */
+$min-height: 140px;
+$border-radius: 3px;
+$gap: 8px;
+button[data-editor-component="panel-uploader-placeholder"],
+div[data-editor-component="panel-uploader-placeholder"] {
+	border:1px solid $color--line !important;
+	width: 100%;
+	position: relative;
+	box-shadow: none !important;
+	padding: 0;
+	border-radius: $border-radius;
+	background-position: center center;
+	background-size: cover;
+	overflow: hidden;
+
+	/**
+	 * Upload
+	 *
+	 * @since    1.0.0
+	 */
+	&[data-mode="upload"] {
+		min-height: $min-height;
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&::before {
+			transition: all 0.6s $easeOutQuart;
+			content: " ";
+			width: calc( 100% - 15px);
+			height: calc( 100% - 15px);
+			background: $color--gray-bg;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: $border-radius;
+		}
+
+		&:hover {
+			svg {
+				path { fill: $color--link-hover; }
+			}
+			&::before {
+				width: 100%;
+				height:100%;
+			}
+		}
+	}
+
+	/**
+	 * Replace
+	 *
+	 * @since    1.0.0
+	 */
+	&[data-mode="replace"] {
+		border:1px solid $color--line !important;
+		width: 100%;
+		height: auto;
+
+		> div {
+			display: grid;
+			grid-gap: $gap;
+			grid-auto-flow: row;
+			grid-template-columns: 1fr 1fr;
+			padding: $gap;
+
+			&[data-count="1"] {
+				grid-template-columns: 1fr;
+			}
+		}
+		video {
+			object-fit: cover;
+			height: auto;
+		}
+		img {
+			object-fit: cover;
+			height: auto;
+			width: 100%;
+		}
+		svg {
+			transition: all 0.6s $easeOutQuart;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+		}
+		&::before {
+			transition: all 0.6s $easeOutQuart;
+			content: " ";
+			width: 105%;
+			height: 105%;
+			background: white;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: $border-radius;
+			opacity: 0;
+		}
+
+		/* ---- hover ---- */
+
+		&:hover {
+			svg {
+				opacity: 1;
+			}
+			&::before {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	/**
+	 * Gallery
+	 *
+	 * @since    1.0.0
+	 */
+	&[data-mode="gallery"] {
+		width: 100%;
+		height: auto;
+		min-height: auto;
+		border: none !important;
+
+		> div {
+			display: grid;
+			grid-gap: $gap;
+			grid-auto-flow: row;
+			grid-template-columns: 1fr 1fr;
+			padding: $gap;
+			border:1px solid $color--line !important;
+
+			&[data-count="1"] {
+				grid-template-columns: 1fr;
+			}
+
+			span {
+				position: relative;
+				img {
+					display: inherit;
+					min-height:100%;
+					min-width: 100%;
+					object-fit: cover;
+				}
+				button {
+					transition: all 0.4s $easeOutQuart;
+					position: absolute;
+					right: 5px;
+					top: 5px;
+					z-index: 1;
+					background-color: white;
+					padding: 4px;
+					opacity: 0;
+
+					&:hover {
+						background-color: $color--link-hover !important;
+						svg path { fill: white; }
+					}
+				}
+				/* ---- hover ---- */
+				&:hover button {
+					opacity: 1;
+				}
+			}
+		}
+		// Add more
+		> button {
+			height: 50px;
+			min-height: 0;
+			margin-top: 10px;
+
+			svg {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			&::before {
+				transition: all 0.6s $easeOutQuart;
+				content: " ";
+				width: calc( 100% - #{$gap});
+				height: calc( 100% - #{$gap});
+				background: $color--gray-bg;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: $border-radius;
+			}
+
+			&:hover {
+				svg {
+					path { fill: $color--link-hover; }
+				}
+				&::before {
+					width: 100%;
+					height:100%;
+				}
+			}
+		}
+	}
+}

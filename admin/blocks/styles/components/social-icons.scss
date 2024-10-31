@@ -1,0 +1,251 @@
+$iconWSize: 40px;
+$addButtonSize: 30px;
+
+div[data-component="social-icons"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+
+	// Icon
+	.-icon {
+		color: inherit;
+		position: relative;
+		width: $iconWSize;
+		height: $iconWSize;
+		font-size: 100%;
+		margin: 0;
+		line-height: 0;
+		display: block;
+		vertical-align: middle;
+
+		i {
+			transition: all 0.6s $easeOutBack;
+			color: inherit;
+			font-size: 22px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&::before {
+			transition: all 0.6s $easeOutBack;
+			content: " ";
+			position: absolute;
+			width: 50%;
+			height: 50%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			border-radius: 50%;
+		}
+
+		/* ---- Hover ---- */
+
+		&:hover {
+			i {
+				color:white;
+			}
+			&::before {
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+			}
+		}
+
+		/**
+		 * Add Original Colors
+		 */
+		&.-modelmayhem::before { background-color: #000000; }
+		&.-mixcloud::before { background-color: #000000; }
+		&.-drupal::before { background-color: #22a9e0; }
+		&.-swarm::before { background-color: #ff9a1c; }
+		&.-istock::before { background-color: #040404; }
+		&.-yammer::before { background-color: #0073c6; }
+		&.-ello::before { background-color: #000000; }
+		&.-stackoverflow::before { background-color: #f47f25; }
+		&.-triplej::before { background-color: #e73429; }
+		&.-houzz::before { background-color: #7bc144; }
+		&.-rss::before { background-color: #fc762b; }
+		&.-paypal::before { background-color: #009cdd; }
+		&.-odnoklassniki::before { background-color: #f68222; }
+		&.-airbnb::before { background-color: #ff5b60; }
+		&.-periscope::before { background-color: #2ba4c6; }
+		&.-outlook::before { background-color: #0074c6; }
+		&.-coderwall::before { background-color: #343131; }
+		&.-tripadvisor::before { background-color: #1e882f; }
+		&.-goodreads::before { background-color: #463020; }
+		&.-tripit::before { background-color: #f38c07; }
+		&.-lanyrd::before { background-color: #133359; }
+		&.-slideshare::before { background-color: #007ab5; }
+		&.-buffer::before { background-color: #333333; }
+		&.-disqus::before { background-color: #239eff; }
+		&.-vkontakte::before { background-color: #4b76a3; }
+		&.-whatsapp::before { background-color: #4dc247; }
+		&.-patreon::before { background-color: #e8481d; }
+		&.-storehouse::before { background-color: #231f20; }
+		&.-pocket::before { background-color: #ee4255; }
+		&.-mail::before { background-color: #008299; }
+		&.-blogger::before { background-color: #f89239; }
+		&.-technorati::before { background-color: #3baf04; }
+		&.-reddit::before { background-color: #ff4706; }
+		&.-dribbble::before { background-color: #f36898; }
+		&.-stumbleupon::before { background-color: #ec4a26; }
+		&.-digg::before { background-color: #165790; }
+		&.-envato::before { background-color: #81b342; }
+		&.-behance::before { background-color: #006aff; }
+		&.-delicious::before { background-color: #1d96ff; }
+		&.-deviantart::before { background-color: #04cc48; }
+		&.-forrst::before { background-color: #4fb54b; }
+		&.-play::before { background-color: #0070c0; }
+		&.-zerply::before { background-color: #9dbb7a; }
+		&.-wikipedia::before { background-color: #333333; }
+		&.-apple::before { background-color: #aaaaaa; }
+		&.-flattr::before { background-color: #fdb936; }
+		&.-github::before { background-color: #323131; }
+		&.-renren::before { background-color: #005fac; }
+		&.-friendfeed::before { background-color: #85a9d9; }
+		&.-newsvine::before { background-color: #005221; }
+		&.-bebo::before { background-color: #ef1513; }
+		&.-zynga::before { background-color: #f60b30; }
+		&.-steam::before { background-color: #010103; }
+		&.-xbox::before { background-color: #107b10; }
+		&.-windows::before { background-color: #0078d7; }
+		&.-qq::before { background-color: #000000; }
+		&.-douban::before { background-color: #007510; }
+		&.-meetup::before { background-color: #f10a05; }
+		&.-playstation::before { background-color: #00338a; }
+		&.-android::before { background-color: #9acc06; }
+		&.-snapchat::before { background-color: #fffb0e; }
+		&.-twitter::before { background-color: #55acee; }
+		&.-facebook::before { background-color: #3b5998; }
+		&.-googleplus::before { background-color: #dd4b39; }
+		&.-pinterest::before { background-color: #cb2027; }
+		&.-foursquare::before { background-color: #fa4a78; }
+		&.-yahoo::before { background-color: #3f0690; }
+		&.-skype::before { background-color: #00b0f0; }
+		&.-yelp::before { background-color: #bf3126; }
+		&.-feedburner::before { background-color: #0072c4; }
+		&.-linkedin::before { background-color: #007bb5; }
+		&.-viadeo::before { background-color: #f4972c; }
+		&.-xing::before { background-color: #005d5e; }
+		&.-myspace::before { background-color: #003499; }
+		&.-soundcloud::before { background-color: #fb3e0f; }
+		&.-spotify::before { background-color: #1dd660; }
+		&.-grooveshark::before { background-color: #f77f07; }
+		&.-lastfm::before { background-color: #e41a2d; }
+		&.-youtube::before { background-color: #bb0000; }
+		&.-vimeo::before { background-color: #06b7ea; }
+		&.-dailymotion::before { background-color: #0065dc; }
+		&.-vine::before { background-color: #00b185; }
+		&.-flickr::before { background-color: #0064db; }
+		&.-w500px::before { background-color: #009ae5; }
+		&.-instagram::before { background-color: #125688; }
+		&.-wordpress::before { background-color: #00749a; }
+		&.-tumblr::before { background-color: #36465d; }
+		&.-twitch::before { background-color: #6343a5; }
+		&.-w8tracks::before { background-color: #0f2c4b; }
+		&.-amazon::before { background-color: #231f20; }
+		&.-smugmug::before { background-color: #96c73e; }
+		&.-ravelry::before { background-color: #c61b4e; }
+		&.-weibo::before { background-color: #fc1d26; }
+		&.-baidu::before { background-color: #181fdc; }
+		&.-angellist::before { background-color: #373435; }
+		&.-ebay::before { background-color: #e63438; }
+		&.-imdb::before { background-color: #e4ac3e; }
+		&.-stayfriends::before { background-color: #ff8d08; }
+		&.-residentadvisor::before { background-color: #fffe0d; }
+		&.-google::before { background-color: #0058c6; }
+		&.-yandex::before { background-color: #e62922; }
+		&.-sharethis::before { background-color: #1c6e01; }
+		&.-bandcamp::before { background-color: #609aa9; }
+	}
+
+	// Empty icon
+	.-empty {
+
+		text-decoration: none;
+		position: relative;
+
+		&::after {
+			content: " ";
+			width: $addButtonSize;
+			height: $addButtonSize;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border: 1px dashed $color--borders;
+			border-radius: 50%;
+		}
+
+		i {
+			position: absolute;
+			top: calc( 50% + 1px );
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 18px;
+		}
+
+		&:hover::after {
+			border: 1px solid $color--borders;
+		}
+	}
+
+	/**
+	 * On editor
+	 */
+	button {
+		transition: all 0.6s $easeOutQuart;
+		width: $addButtonSize;
+		height: $addButtonSize;
+
+		border-radius: 50%;
+		border: 1px solid $color--borders;
+		background-color: rgba(white, 0.7);
+
+		position: absolute;
+		right: -35px;
+		top: 5px;
+
+		svg {
+			position: absolute;
+			top: calc( 50% + 1px );
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: inherit;
+			path {
+				transition: all 0.8s $easeOutQuart;
+				color: $color--icons;
+			}
+		}
+
+		/* ---- hover ---- */
+		&:hover {
+			border: 1px solid rgba($color--icons--hover, 0.5);
+			background-color: rgba(white, 1);
+			svg path {
+				color: $color--icons--hover;
+			}
+		}
+	}
+
+}
+
+/**
+ * Social icons menu
+ */
+.editor-block-social-icons-menu__content {
+	.components-popover__content {
+		padding: 7px;
+
+		.editor-block-settings-menu__separator {
+			border-top: 1px solid #e2e4e7;
+			margin: 8px -7px;
+		}
+	}
+}

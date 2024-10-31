@@ -1,0 +1,162 @@
+/**
+ * Background Types
+ *
+ * @since    1.0.0
+ */
+div[data-component="block-background"] {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+
+	/**
+	 * Color
+	 *
+	 * @since   1.0.0
+	 */
+	.color-element {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-position: center;
+		background-size: cover;
+	}
+
+	/**
+	 * Image
+	 *
+	 * @since   1.0.0
+	 */
+	.image-element {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-position: center;
+		background-size: cover;
+
+		> span {
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			background-position: center;
+			background-size: cover;
+
+			.components-spinner {
+				background-color: #ffffff;
+				opacity: 1;
+				margin: 10px;
+				&::before { background-color: #555d67; }
+			}
+
+			&:nth-of-type(2) {
+				z-index: 1;
+			}
+		}
+	}
+
+	/**
+	 * Gallery.
+	 *
+	 * @since   1.0.0
+	 */
+	.gallery-element {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-position: center;
+		background-size: cover;
+
+		> div {
+			width: 100%;
+			height: 100%;
+			&:not(.flickity-enabled) {
+				visibility: hidden;
+				display: none;
+			}
+			.flickity-viewport {
+				width: 100%;
+				height: 100% !important;
+			}
+			.flickity-slider {
+				width: 100%;
+				height: 100% !important;
+				transform: none !important;
+			}
+
+			span {
+				transition: all 2s $easeOutQuart;
+				width: 100%;
+				height: 100%;
+
+				left: 0 !important;
+				opacity: 0;
+
+				&.is-selected{
+					opacity: 1;
+				}
+
+				img {
+					display: inherit;
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Video
+	 *
+	 * @since   1.0.0
+	 */
+	.video-element {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-position: center;
+		background-size: cover;
+
+		video {
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			object-fit: cover;
+		}
+	}
+
+}
+
+/**
+ * Background Overlayer
+ *
+ * @since    1.0.0
+ */
+div[data-component="block-background-overlayer"] {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}

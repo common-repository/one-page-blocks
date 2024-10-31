@@ -1,0 +1,256 @@
+$browser-margins:20px;
+$button-size:60px;
+$button-bg-color: #282A2F;
+$modal-width: 300px;
+$border-radius: 10px;
+$text-color: #555D67;
+div[data-component="unlock-page"] {
+	transition: all 0.6s $easeInOutExpo;
+	position: absolute;
+	bottom: $browser-margins;
+	right: $browser-margins;
+	z-index: 10;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.button {
+		width: $button-size;
+		height: $button-size;
+		position: relative;
+		display: block;
+		z-index: 2;
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+			path:nth-of-type(1) {
+				transition: all 0.6s $easeInOutExpo;
+			}
+		}
+		i {
+			@include spinner();
+			opacity: 0;
+		}
+		span {
+			transition: all 0.6s $easeInOutQuart;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			background-color: $button-bg-color;
+			border-radius: 50%;
+			z-index: 1;
+		}
+	}
+	.content__wrapper {
+		transition: all 0.6s $easeOutQuart;
+		z-index: 1;
+		padding: 10px 30px 10px 15px;
+		position: absolute;
+		bottom: -15px;
+		right: $button-size / 2;
+		width: $modal-width;
+		padding-right: 60px;
+		box-sizing: border-box;
+		overflow: hidden;
+		border-radius: $border-radius;
+
+		// Message
+		span {
+			padding: 15px;
+			position: absolute;
+			top:0;
+			left: 0;
+			background-color: white;
+			width: 100%;
+			height: 100%;
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+
+			p {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+				font-size: 14px;
+				color: $text-color;
+				padding: 0;
+				margin: 0;
+				&.-error {
+					color: $color--error;
+				}
+			}
+		}
+
+		// Label
+		> p {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+			font-size: 14px;
+			color: #555D67;
+			padding: 0;
+			margin: 0 0 10px 0;
+		}
+
+		// Input
+		input {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+			background-color: #E8EBEE;
+			border-radius: 50px;
+			width: 100%;
+			padding: 5px 10px  7px 10px;
+			outline: none;
+			box-sizing: border-box;
+			font-size: 14px;
+			border: 1px solid transparent;
+
+			&.-error {
+				border-color: $color--error;
+			}
+			&:focus, &:hover {
+				background-color: darken(#E8EBEE, 5%);
+			}
+		}
+
+		// Background
+		i {
+			background-color: white;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+	}
+	.page-overlayer {
+		position: fixed;
+		transition: all 1s linear;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		right: 0;
+		opacity: 0;
+		pointer-events: none;
+		background: rgb(2,0,36);
+		background: linear-gradient(152deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.9) 100%);
+	}
+
+	/**
+	 * Loading
+	 */
+	&[data-loading="true"] {
+		.button {
+			pointer-events: none;
+			svg {
+				opacity: 0;
+			}
+			i {
+				opacity: 1;
+			}
+		}
+
+	}
+
+	/**
+	 * Message
+	 */
+	&[data-message="true"] {
+		.button {
+			pointer-events: none;
+		}
+		.content__wrapper {
+			padding-top: 0;
+			padding-bottom: 0;
+			bottom: -8px;
+			transition-duration: 0.4s;
+			span {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+	}
+
+	/**
+	 * Modes
+	 */
+	&[data-mode="close"] {
+		.button:hover {
+			svg path:nth-of-type(1) {
+				transform: translateY(-2px);
+			}
+			span {
+				width: 110%;
+				height: 110%;
+				box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+			}
+		}
+		.content__wrapper {
+			pointer-events: none;
+			> p {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+			input {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+			i {
+				width: 0;
+			}
+		}
+		.page-overlayer {
+			transition-duration: 0.6s;
+		}
+	}
+	&[data-mode="open"] {
+		bottom: $browser-margins * 2 ;
+		.button {
+			span {
+				transition: all 0.6s $easeInOutExpo;
+				border-radius:$border-radius;
+			}
+			svg path:nth-of-type(1) {
+				transform: translateY(-2px);
+			}
+			/* ---- hover ---- */
+			&:hover {
+				span { height: 120%}
+				svg path:nth-of-type(1) {
+					transform: translateY(-5px);
+				}
+			}
+		}
+		.content__wrapper {
+			pointer-events: auto;
+			> p {
+				transition: all 0.6s $easeOutQuart 0.5s;
+				opacity: 1;
+			}
+			input {
+				transition: all 0.6s $easeOutQuart 0.6s;
+				opacity: 1;
+			}
+			i {
+				transition: all 0.6s $easeInOutExpo;
+				width: 100%;
+			}
+		}
+		.page-overlayer {
+			opacity: 1;
+			transition-duration: 1s;
+			pointer-events: auto;
+		}
+	}
+
+}
+

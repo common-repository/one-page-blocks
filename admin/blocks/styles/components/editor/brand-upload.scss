@@ -1,0 +1,46 @@
+$size: 30px;
+button[data-editor-component="brand-uploader"] {
+	position: relative;
+	display: table;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+
+	i {
+		transition: all 0.8s $easeOutQuart;
+		position: absolute;
+		right: -$size / 2;
+		top: -$size / 2;
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		border: 1px solid $color--borders;
+		background-color: rgba(white, 0.7);
+		color: $color--icons;
+		pointer-events: none;
+
+		&::before {
+			transition: all 0.8s $easeOutQuart;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+		}
+	}
+
+	img {
+		display: inherit;
+	}
+
+	/* ---- hover ---- */
+	&:hover i {
+		border: 1px solid rgba($color--icons--hover, 0.5);
+		background-color: rgba(white, 1);
+		&::before {
+			color: $color--icons--hover;
+		}
+	}
+
+}

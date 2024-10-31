@@ -1,0 +1,114 @@
+# Copyright (C) 2018 one-page-blocks
+# This file is distributed under the same license as the one-page-blocks package.
+msgid ""
+msgstr ""
+"Project-Id-Version: one-page-blocks\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: PixelThrone\n"
+"Last-Translator: Helder Vilela from Pixelthrone\n"
+"Report-Msgid-Bugs-To: support@pixelthrone.com\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: one-page-blocks.php:191, one-page-blocks.php:204
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: admin/config.settings.php:63, admin/config.settings.php:67
+msgid "One Page"
+msgstr ""
+
+#: admin/config.settings.php:65
+msgid "Pages"
+msgstr ""
+
+#: admin/config.settings.php:66, admin/config.settings.php:68
+msgid "Page"
+msgstr ""
+
+#: admin/config.settings.php:69
+msgid "All Pages"
+msgstr ""
+
+#: admin/config.settings.php:70
+msgid "View Pages"
+msgstr ""
+
+#: admin/config.settings.php:71, admin/config.settings.php:72
+msgid "Add new"
+msgstr ""
+
+#: admin/config.settings.php:73
+msgid "Edit Pages"
+msgstr ""
+
+#: admin/config.settings.php:74
+msgid "Update"
+msgstr ""
+
+#: admin/config.settings.php:75
+msgid "Search pages"
+msgstr ""
+
+#: admin/config.settings.php:76
+msgid "No pages found"
+msgstr ""
+
+#: admin/config.settings.php:77
+msgid "No pages found in Trash"
+msgstr ""
+
+#: admin/config.settings.php:105
+msgid "%s Add One Page"
+msgstr ""
+
+#: admin/config.settings.php:111
+msgid "%s Settings"
+msgstr ""
+
+#. translators: Name of this pluign
+#: lib/Gutenberg_Checker.php:135
+msgid "deactivate %1$s"
+msgstr ""
+
+#. translators: 1: Required plugin 2: Name of this plugin 3: Activate or Install, from $link above
+#. translators: 1: Required plugin 2: Name of this pluign 3: Activate or Install, from $link above
+#: lib/Gutenberg_Checker.php:140, lib/Gutenberg_Checker.php:173
+msgid "%1$s requires the %2$s block editor. %4$s Please %3$s to continue."
+msgstr ""
+
+#. translators: Name of this pluign
+#: lib/Gutenberg_Checker.php:162
+msgid "activate %1$s"
+msgstr ""
+
+#. translators: Name of this pluign
+#: lib/Gutenberg_Checker.php:166
+msgid "install %1$s"
+msgstr ""
+
+#: admin/api/UnlockPage.php:77, admin/api/UnlockPage.php:106
+msgid "No naughty business please!"
+msgstr ""
+
+#: admin/api/UnlockPage.php:91
+msgid "The page will be updated."
+msgstr ""
+
+#: admin/api/UnlockPage.php:101
+msgid "The password is not correct."
+msgstr ""
+
+#: frontend/components/cookie-notice.php:20
+msgid "Got it, Thanks!"
+msgstr ""
+
+#: frontend/components/unlock-page.php:23
+msgid "This site is password protected, view by typing the password."
+msgstr ""

@@ -1,0 +1,108 @@
+/**
+ * Color palette
+ *
+ * @since    1.0.0
+ */
+div[data-editor-component="color-palette-base-control"] {
+	label {
+		margin-bottom: 14px;
+		display: flex !important;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.component-color-indicator {
+
+	}
+}
+
+/**
+ * Notices
+ *
+ * @since    1.0.0
+ */
+*[data-editor-component|="notice"] {
+	border-left: 4px solid transparent;
+	padding: 8px 12px;
+	color: initial;
+	text-decoration: none;
+
+	&[data-notice="warning"] {
+		background-color: #fef8ee;
+		border-left-color: #f0b849;
+	}
+}
+
+/**
+ * Date Time Picker
+ *
+ * @since    1.0.0
+ */
+.editor-component--dropdown-date-time-picker {
+	.components-popover__content {
+		padding: 10px;
+	}
+}
+.editor-component--field-date-time-picker {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	> div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		min-height: 24px;
+
+		label {
+			margin: 0;
+			padding: 0;
+			width: auto !important;
+			flex-grow: 1;
+		}
+		button:nth-of-type(1) {
+			padding: 0;
+			margin: 0;
+			text-align: right !important;
+			margin-right: 10px;
+		}
+	}
+}
+
+/**
+ * Single Label
+ *
+ * @since    1.0.0
+ */
+label.single-field-label {
+	padding: 0;
+	margin: 0 0 10px 0;
+	display: block;
+	color: $color--text;
+}
+
+/**
+ * Help Notice
+ *
+ * @since    1.0.0
+ */
+
+*[data-editor-component="help-notice"] {
+	opacity: 0.7;
+	font-size: 12px;
+	padding: 0;
+	margin-top: 6px !important;
+}
+
+/**
+ * Panel Titles
+ *
+ * @since    1.0.0
+ */
+.components-panel__body.editor-block-inspector__advanced {
+	.components-panel__body-title button {
+		text-transform: uppercase;
+	}
+}

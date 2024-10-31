@@ -1,0 +1,11 @@
+body {
+	// Header
+	.edit-post-header {
+		.edit-post-pinned-plugins button .settings-button {
+			stroke: none !important;
+			> * {
+				stroke: none !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+[
+  {
+	"name" : "pixelthrone/onepage--temp-01",
+	"slug" : "temp-01",
+	"thumb" : {
+	  "name" : "01",
+	  "img" : "/admin/blocks/_available/temp-01/media/thumb.jpg"
+	},
+	"script" : "",
+	"render_callback" : true
+  }
+]

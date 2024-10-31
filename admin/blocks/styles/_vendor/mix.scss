@@ -1,0 +1,121 @@
+/**
+ * keyframes
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+/**
+ * Spinner
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+@mixin spinner($color: white, $w:20px, $bgColor:transparent, $withColor:true) {
+	transition:all 0.6s $easeOutQuart;
+
+	width: $w;
+	height: $w;
+	display: block;
+	position: absolute;
+	top:calc(50% - #{$w} / 2);
+	left:calc(50% - #{$w} / 2);
+	opacity: 0;
+	z-index: 2;
+
+	@if $withColor {
+		border: solid 2px $color;
+	} @else {
+		border-width: 3px;
+		border-style: solid;
+	}
+
+	border-top-color:  $bgColor;
+	border-left-color: $bgColor;
+	border-radius: 50%;
+
+	animation: pt_theme__loadingSpinner 0.4s linear infinite;
+
+	&.hidde { display: none; }
+}
+@include keyframes(pt_theme__loadingSpinner) {
+	0%   	{ 	transform:rotate(0deg); 	}
+	100% 	{	transform:rotate(360deg);	}
+}
+
+/**
+ * Inherit Typography
+ */
+/**
+ * Media
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+%inherit-typography {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+}
+
+
+/**
+ * Media
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+@mixin media( $res ) {
+	@if mobile == $res {
+		@media only screen and (max-width: $breakpoint__mobile) {
+			@content;
+		}
+	}
+
+	@if tablet-portrait == $res {
+		@media only screen and (max-width: $breakpoint__tablet-portrait) {
+			@content;
+		}
+	}
+
+	@if tablet == $res {
+		@media only screen and (max-width: $breakpoint__tablet) {
+			@content;
+		}
+	}
+
+	@if laptops == $res {
+		@media only screen and (max-width: $breakpoint__laptops) {
+			@content;
+		}
+	}
+
+	@if desktop == $res {
+		@media only screen and (max-width: $breakpoint__laptops) {
+			@content;
+		}
+	}
+
+	@if wide == $res {
+		@media only screen and (max-width: $breakpoint__wide) {
+			@content;
+		}
+	}
+}

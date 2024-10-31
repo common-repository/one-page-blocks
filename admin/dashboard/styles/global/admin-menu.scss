@@ -1,0 +1,29 @@
+body {
+	#adminmenuwrap > ul {
+
+		// Plugin menu
+		#menu-posts-one-page-blocks {
+
+			ul {
+
+				li > a[href*='account']:not(.current),
+				li:nth-last-child(2) a:not(.current),
+				li:nth-last-child(1) a:not(.current) {
+					opacity: 0.6;
+					&:hover {
+						opacity: 1;
+					}
+				}
+				li:nth-last-child(1) {
+					a {
+						span {
+							//color: $color--highlight;
+						}
+					}
+				}
+			}
+
+		}
+
+	}
+}

@@ -1,0 +1,85 @@
+/**
+ * keyframes
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+/**
+ * Spinner
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+@-webkit-keyframes pt_theme__loadingSpinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes pt_theme__loadingSpinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+/**
+ * Inherit Typography
+ */
+/**
+ * Media
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+/**
+ * Media
+ *
+ * @since   1.0.0
+ * @version 1.0.0
+ */
+/**
+ * Colors
+ */
+/**
+ * Media Queryes
+ */
+/**
+ * Toolbar.
+ *
+ * @since    1.0.0
+ */
+body.post-type-one-page-blocks .wrap #split-page-title-action .expander {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content .subsubsub {
+  margin-bottom: 10px; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .search-box {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .tablenav.top {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table thead .check-column {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table tbody .check-column {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table tbody .column-title .post-state {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table tbody .column-title .row-actions .edit, body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table tbody .column-title .row-actions .classic, body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table tbody .column-title .row-actions .inline {
+  display: none; }
+
+body.post-type-one-page-blocks #wpbody-content #posts-filter .wp-list-table tfoot .check-column {
+  display: none; }
+
+body.post-type-one-page-blocks #plugin-dashboard {
+  margin-left: 36px;
+  background-color: red;
+  padding: 30px; }

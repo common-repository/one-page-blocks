@@ -1,0 +1,60 @@
+body {
+	// Sidebar
+	.edit-post-sidebar {
+		.components-panel {
+			div[data-component*="sidebar--"] {
+
+				// Painel
+				.components-panel__body {
+					.components-panel__row {
+						flex-wrap: wrap;
+						.components-base-control {
+							width: 100%;
+							margin-bottom: 18px;
+
+							.components-base-control__field {
+								margin-bottom: 0;
+
+								textarea, input {
+									display: inherit;
+								}
+							}
+							.components-base-control__help {
+								opacity: 0.7;
+								font-size: 12px;
+								margin-top: 5px;
+							}
+						}
+					}
+				}
+
+				label {
+					display: block;
+					width: 100%;
+					font-weight: 500;
+				}
+
+				button:focus { outline: none !important; }
+
+				// Loading state
+				&[data-loading="true"] {
+					position: relative;
+					.components-spinner {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						margin: 0;
+					}
+					.components-panel__body {
+						transition: all 0.6s $easeOutQuart;
+						opacity: 0.3;
+						pointer-events: none;
+					}
+				}
+
+			}
+		}
+	}
+
+}
